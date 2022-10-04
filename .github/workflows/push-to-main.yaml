@@ -11,8 +11,8 @@ jobs:
     outputs:
       something: ${{ steps.step1.outputs.something }}
     
-    steps:
-      - name: step1
+    steps: 
+      - name: step1 
         id: step1
         run: |
           echo "::set-output name=something::false"
@@ -21,7 +21,7 @@ jobs:
       - job1
     runs-on:
      - ubuntu-latest
-    if: needs.job1.outputs.something == 'true'
+    if: needs.job1.outputs.something == 'false'
     steps:
       - name: output 
         run: echo ${{ needs.job1.output.something }}
