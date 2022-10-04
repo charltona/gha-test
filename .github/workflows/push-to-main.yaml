@@ -20,7 +20,7 @@ jobs:
     needs:
       - job1
     runs-on:
-     - ubunutu-latest
+     - ubuntu-latest
     
     steps:
       - name: output 
