@@ -1,1 +1,29 @@
 name: Push to Main
+on:
+  push:
+   branches:
+    - main
+    
+jobs: 
+  job1:
+    runs-on:
+      - ubuntu-latest
+    outputs:
+      something: ${{ steps.step1.outputs.something }}
+    
+    steps:
+      - name: step1
+        id: step1
+        run: |
+          echo "::set-output nane=something::true"
+  job2:
+    needs:
+      - job1
+    runs-on:
+     - ubunutu-latest
+    
+    steps:
+      - name: output 
+        run: echo ${{ needs.job1.output.something }}
+    
+    
