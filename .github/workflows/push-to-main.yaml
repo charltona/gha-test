@@ -31,7 +31,7 @@ jobs:
       - ubuntu-latest
     needs:
      - job2
-    if: always() && false
+    if: always() && true
     steps:
       - run: echo "true"
     
