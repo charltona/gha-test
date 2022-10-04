@@ -15,7 +15,7 @@ jobs:
       - name: step1
         id: step1
         run: |
-          echo "::set-output name=something::true"
+          echo "::set-output name=something::false"
   job2:
     needs:
       - job1
