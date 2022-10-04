@@ -28,10 +28,10 @@ jobs:
   
   job3:
     runs-on:
-      -ubuntu-latest
+      - ubuntu-latest
     needs:
      - job2
-    if: always()
+    if: always() && false
     steps:
       - run: echo "true"
     
